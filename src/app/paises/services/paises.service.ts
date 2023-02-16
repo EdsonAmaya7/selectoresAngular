@@ -32,23 +32,23 @@ export class PaisesService {
   }
 
  
-  getPaisPorCodigo(codigo: string): Observable<PaisSmall> {
+  // getPaisPorCodigo(codigo: string): Observable<PaisSmall> {
 
-    const url = `${this._baseUrl}alpha/${codigo}?fields=cca3,name`;
-    return this.http.get<PaisSmall>(url)
-  }
+  //   const url = `${this._baseUrl}alpha/${codigo}?fields=cca3,name`;
+  //   return this.http.get<PaisSmall>(url)
+  // }
 
-  getPaisesPorCodigos(bordes: Pais[]): Observable<PaisSmall[]> {
-    if (!bordes[0]?.borders) {
-      return of([]);
-    }
-    const peticiones: Observable<PaisSmall>[] = [];
+  // getPaisesPorCodigos(bordes: Pais[]): Observable<PaisSmall[]> {
+  //   if (!bordes[0]?.borders) {
+  //     return of([]);
+  //   }
+  //   const peticiones: Observable<PaisSmall>[] = [];
 
-    bordes[0]?.borders.forEach(codigo => {
-      const peticion = this.getPaisPorCodigo(codigo);
-      peticiones.push(peticion);
-    });
+  //   bordes[0]?.borders.forEach(codigo => {
+  //     const peticion = this.getPaisPorCodigo(codigo);
+  //     peticiones.push(peticion);
+  //   });
 
-    return combineLatest(peticiones);
-  } 
+  //   return combineLatest(peticiones);
+  // } 
 }
